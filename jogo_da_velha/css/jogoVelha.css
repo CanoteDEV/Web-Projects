@@ -1,0 +1,294 @@
+/* style.css */
+
+body {
+  font-family: Montserrat;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #ffe4e5;
+  background-color: #dc143c;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.container {
+  text-align: center;
+  position: absolute;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.message {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#a1 {
+  border-bottom: solid 10px transparent;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-top: solid 10px transparent;
+}
+
+#a2 {
+  border-bottom: solid 10px transparent;
+  border-left: solid 10px #9c0720;
+  border-right: solid 10px #9c0720;
+  border-top: solid 10px transparent;
+}
+
+#a3 {
+  border-bottom: solid 10px transparent;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-top: solid 10px transparent;
+}
+
+#b1 {
+  border-bottom: solid 10px #9c0720;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-top: solid 10px #9c0720;
+}
+
+#b2 {
+  border-bottom: solid 10px #9c0720;
+  border-left: solid 10px #9c0720;
+  border-right: solid 10px #9c0720;
+  border-top: solid 10px #9c0720;
+}
+
+#b3 {
+  border-bottom: solid 10px #9c0720;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-top: solid 10px #9c0720;
+}
+
+#c1 {
+  border-bottom: solid 10px transparent;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-top: solid 10px transparent;
+}
+
+#c2 {
+  border-bottom: solid 10px transparent;
+  border-left: solid 10px #9c0720;
+  border-right: solid 10px #9c0720;
+  border-top: solid 10px transparent;
+}
+
+#c3 {
+  border-bottom: solid 10px transparent;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  border-top: solid 10px transparent;
+}
+
+.oBox {
+  font-size: 130px;
+  animation-name: spawnEffect;
+  animation-duration: 0.2s;
+  transition: 0.5s;
+}
+
+.xBox {
+  font-size: 130px;
+  animation-name: spawnEffect;
+  animation-duration: 0.2s;
+  color: #72001c;
+  transition: 0.5s;
+}
+
+@keyframes spawnEffect {
+  0% {
+    font-size: 0px;
+  }
+
+  100% {
+    font-size: 130px;
+  }
+}
+
+.line {
+  z-index: 1;
+  position: relative;
+  animation-duration: 1.3s;
+}
+
+.white {
+  background-color: #ffe4e5;
+}
+
+.black {
+  background-color: #72001c;
+}
+
+.horizontal {
+  animation-name: h-anim;
+  width: 480px;
+  height: 15px;
+}
+
+.vertical {
+  animation-name: v-anim;
+  width: 15px;
+  height: 480px;
+}
+
+.diagonalEsquerda {
+  animation-name: dE-anim;
+  width: 625px;
+  height: 15px;
+  transform: rotate(45deg);
+}
+
+.diagonalDireita {
+  animation-name: dD-anim;
+  width: 625px;
+  height: 15px;
+  transform: rotate(-45deg);
+}
+
+@keyframes h-anim {
+  0% {
+    width: 0px;
+  }
+  25% {
+    width: 480px;
+  }
+  75% {
+    width: 480px;
+  }
+  90% {
+    width: 0px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+@keyframes v-anim {
+  0% {
+    height: 0px;
+  }
+  25% {
+    height: 480px;
+  }
+  75% {
+    height: 480px;
+  }
+  90% {
+    height: 0px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+@keyframes dE-anim {
+  0% {
+    width: 0px;
+  }
+  25% {
+    width: 625px;
+  }
+  75% {
+    width: 625px;
+  }
+  90% {
+    width: 0px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+@keyframes dD-anim {
+  0% {
+    width: 0px;
+  }
+  25% {
+    width: 625px;
+  }
+  75% {
+    width: 625px;
+  }
+  90% {
+    width: 0px;
+  }
+  100% {
+    width: 0px;
+  }
+}
+
+.pointContainer {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.pointBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  width: 80px;
+  height: 40px;
+  background-color: #ff3254;
+  padding: 20px;
+  transition: 0.5s;
+}
+
+.winnerBox {
+  transform: scale(1.15);
+}
+
+.xIcon {
+  color: #72001c;
+  font-weight: bolder;
+  font-size: 35px;
+}
+
+.oIcon {
+  color: #ffffff;
+  font-weight: bolder;
+  font-size: 35px;
+}
+
+.transparentEffect {
+  opacity: 0;
+}

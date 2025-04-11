@@ -1,0 +1,73 @@
+<!-- index.html (sem data-cell) -->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="css/jogoVelha.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Jogo da Velha</h1>
+
+      <div class="pointContainer">
+        <div class="pointBox" id="xIconBox">
+          <div class="xIcon">X</div>
+          <h1 class="xIcon">:</h1>
+          <h1 class="xIcon" id="xPoint">0</h1>
+        </div>
+        <div class="pointBox" id="oIconBox">
+          <div class="oIcon">O</div>
+          <h1 class="oIcon">:</h1>
+          <h1 class="oIcon" id="oPoint">0</h1>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="board">
+        <div class="cell" id="a1" onclick="checkBox(0,0)">
+          <!--- <div class="xBox">o</div> --->
+        </div>
+        <div class="cell" id="a2" onclick="checkBox(0,1)"></div>
+        <div class="cell" id="a3" onclick="checkBox(0,2)"></div>
+        <div class="cell" id="b1" onclick="checkBox(1,0)"></div>
+        <div class="cell" id="b2" onclick="checkBox(1,1)"></div>
+        <div class="cell" id="b3" onclick="checkBox(1,2)"></div>
+        <div class="cell" id="c1" onclick="checkBox(2,0)"></div>
+        <div class="cell" id="c2" onclick="checkBox(2,1)"></div>
+        <div class="cell" id="c3" onclick="checkBox(2,2)"></div>
+      </div>
+      <br />
+      <div class="message"></div>
+      <h1 id="messageText"></h1>
+      <button
+        class="reset-button"
+        onclick="resetGame();document.getElementById('messageText').textContent='';"
+      >
+        Reiniciar
+      </button>
+    </div>
+    <div id="board"></div>
+  </body>
+  <script src="js/jogoVelha.js"></script>
+  <!-- Código de leitura em Libras -->
+
+  <!-- inicio ACESSIBILIDADE EM LIBRAS -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget("https://vlibras.gov.br/app");
+  </script>
+  <!-- fim ACESSIBILIDADE EM LIBRAS -->
+</html>
